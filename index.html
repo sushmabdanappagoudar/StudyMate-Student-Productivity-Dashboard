@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyMate | Student Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">✦</span> StudyMate</a>
+    <span class="tagline">Your space to study smarter</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">STUDENT WORKSPACE</p>
+        <h1>Make today <span>count.</span></h1>
+        <p class="subtext">Plan your work, focus on what matters, and track your progress.</p>
+      </div>
+      <div class="date-card"><span>YOUR DAILY SNAPSHOT</span><strong id="today"></strong><small id="greeting">One step at a time.</small></div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span>Tasks completed</span><strong id="completedCount">0</strong><small>Keep going!</small></article>
+      <article class="stat-card"><span>Tasks remaining</span><strong id="remainingCount">0</strong><small>You've got this.</small></article>
+      <article class="stat-card"><span>Focus sessions</span><strong id="sessionCount">0</strong><small>25-minute sessions</small></article>
+    </section>
+
+    <section class="grid">
+      <article class="panel tasks-panel">
+        <div class="panel-heading"><div><p class="eyebrow">STAY ORGANIZED</p><h2>My study tasks</h2></div><span class="pill">TASK LIST</span></div>
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" placeholder="Add a task (e.g. Revise DBMS)" maxlength="80" required />
+          <select id="priority"><option value="Normal">Normal</option><option value="High">High priority</option><option value="Low">Low priority</option></select>
+          <button type="submit">Add task +</button>
+        </form>
+        <div id="taskList" class="task-list"></div>
+        <p id="emptyState" class="empty">No tasks yet. Add your first study task above.</p>
+      </article>
+
+      <article class="panel focus-panel">
+        <p class="eyebrow">DEEP WORK</p><h2>Focus timer</h2>
+        <p class="muted">Try one focused 25-minute study session.</p>
+        <div class="timer" id="timer">25:00</div>
+        <div class="timer-actions"><button id="startBtn">Start</button><button class="secondary" id="resetBtn">Reset</button></div>
+        <p class="timer-note" id="timerStatus">Ready when you are.</p>
+      </article>
+
+      <article class="panel notes-panel">
+        <p class="eyebrow">QUICK NOTES</p><h2>Study notes</h2>
+        <textarea id="notes" placeholder="Write important points, reminders, or concepts here..."></textarea>
+        <div class="note-footer"><span id="saveStatus">Notes are saved on this device.</span><button class="secondary" id="clearNotes">Clear notes</button></div>
+      </article>
+
+      <article class="panel tip-panel">
+        <p class="eyebrow">A SMALL REMINDER</p><h2>Study tip of the day</h2>
+        <p id="tip">Break a large topic into smaller parts. Understanding one concept well is better than rushing through five.</p>
+        <button class="secondary" id="newTip">Show another tip ↗</button>
+      </article>
+    </section>
+    <footer>StudyMate · A simple productivity project for students</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
